@@ -1,0 +1,20 @@
+<div style="display: table; height: 100%; width: 100%">
+    <div style="display: table-cell; text-align: center; vertical-align: middle;">
+  
+      <form class="row g-3 align-items-center">
+          <div class="col-12 col-lg-6 offset-lg-3">
+              <h6>Consulta Enquadramento União<sup><a href="#" (click)="showInfo($event)" class="text-danger" style="text-decoration: none;">*</a></sup></h6>
+          </div>
+        <div class="col-12 col-lg-6 offset-lg-3">
+          <label class="visually-hidden" for="inlineFormInputGroupUsername">Buscar</label>
+          <div class="input-group">
+            <div class="input-group-text"><i class="fas fa-search"></i></div>
+            <input type="text" class="form-control" [(ngModel)]="query" name="query" id="inlineFormInputGroupUsername" placeholder="Buscar">
+          </div>
+        </div>
+        <div class="col-12 col-lg-6 offset-lg-3">
+          <button type="submit" class="btn btn-primary" (click)="search($event)">Buscar</button>
+        </div>
+      </form>
+    </div>
+  </div>
