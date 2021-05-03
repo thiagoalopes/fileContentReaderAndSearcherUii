@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  baseUrl: 'http://localhost:8080',
+  baseUrl: 'https://buscador.thiagoalopes.dev.br:8443/buscador',
+  /*baseUrl: 'http://localhost:8080'*/
 };

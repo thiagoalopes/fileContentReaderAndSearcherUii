@@ -122,5 +122,8 @@
       }
     }
   },
-  "defaultProject": "fileContentReaderAndSearcherUi"
+  "defaultProject": "fileContentReaderAndSearcherUi",
+  "cli": {
+    "analytics": "d008c652-7ea4-4aed-883c-9bbcaa5a60c2"
+  }
 }

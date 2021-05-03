@@ -1,3 +1,4 @@
+import { NullTemplateVisitor } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AppService } from '../app.service';
@@ -10,6 +11,8 @@ import { Result } from '../result.model';
 })
 export class ResultComponent implements OnInit {
 
+  public status = 'Buscando...';
+  public modal = false;
   public query: string;
   public content: string;
   public result: Result[] = [];
@@ -31,7 +34,9 @@ export class ResultComponent implements OnInit {
     this.appService.query(this.query)
       .then(response=>{
         this.result = response;
-        console.log(this.result);
+        if(this.result == null || this.result.length == 0){
+          this.status = 'Nenhum resultado encontrado';
+        }
       })
       .catch(e=>{
           console.log(e);
@@ -40,14 +45,20 @@ export class ResultComponent implements OnInit {
 
   public open(e, fileName){
     e.preventDefault();
+    this.modal = true;
     this.appService.getDocument(fileName).subscribe(res => {
        const fileURL = URL.createObjectURL(res);
        window.open(fileURL, '_blank');
+       this.modal = false;
      });
   }
 
   public search(e){
     e.preventDefault();
+    this.result = [];
+    this.status = 'Buscando...';
+    this.getData();
     this.router.navigate(['result'],{ queryParams: {word: this.query}});
+
   }
 }

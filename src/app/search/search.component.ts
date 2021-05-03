@@ -19,10 +19,14 @@ export class SearchComponent implements OnInit {
     e.preventDefault();
     alert(
       `
-      O sistema de procura pela palavara buscada
-      dentro dos arquivos do enquadramento para
-      facilitar a localização das publicações
-      relacionadas ao enquadramento da união.
+      O sistema procura pela palavra informada
+      dentro dos arquivos das publicações
+      do enquadramento.
+
+      O buscador pesquisa exatamente o que foi
+      informado, mas ignora caixa alta e
+      caracteres especiais, como por exemplo
+      acentos.
       `
       );
   }

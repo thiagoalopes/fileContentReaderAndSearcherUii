@@ -1,3 +1,4 @@
+<div *ngIf='modal' style="width: 100%; left: 0; top:0; z-index: 999; button:0; height: 100%; position: fixed; background-color: rgba(0, 0, 0, 0.5);"></div>
 <form class="row mt-4 g-3 align-items-left">
   <div class="col-8">
     <label class="visually-hidden" for="inlineFormInputGroupUsername">Buscar</label>
@@ -27,7 +28,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <h5 class="card-title">Nenhum resultado encontrado</h5>
+                        <h5 class="card-title">{{ status }}</h5>
                     </div>
                 </div>
             </div>
